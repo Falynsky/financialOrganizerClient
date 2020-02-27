@@ -9,6 +9,7 @@ import {MatToolbarModule, MatButtonModule, MatIconModule, _MatMenuDirectivesModu
 import { AboutPageComponent } from './about-page/about-page.component';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HomePageComponent } from './home-page/home-page.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,

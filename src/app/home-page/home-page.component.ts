@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ApiService} from './api.service';
 
 @Component({
   selector: 'app-home-page',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  smartphone: any = [];
+
+  constructor(private api: ApiService) {
+  }
 
   ngOnInit() {
+    this.getSmartphones();
+  }
+
+  getSmartphones() {
+    this.api.getSmartphone()
+      .subscribe(data => {
+        for (const d of (data as any)) {
+          this.smartphone.push({
+            subjectId: d.subjectId,
+            forename: d.forename,
+            surename: d.surename,
+            email: d.email
+          });
+        }
+        console.log(this.smartphone);
+      });
   }
 
 }
