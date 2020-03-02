@@ -10,6 +10,8 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CustomMaterialModule } from './core/material.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatIconModule,
     _MatMenuDirectivesModule,
-    MatMenuModule
+    MatMenuModule,
+    CustomMaterialModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

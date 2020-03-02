@@ -16,4 +16,8 @@ export class ApiService {
   getSubjets() {
     return this.http.get(localUrl + 'subjects/all');
   }
+
+  getAccounts() {
+    return this.http.get(localUrl + 'accounts/all');
+  }
 }

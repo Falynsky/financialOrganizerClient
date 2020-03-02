@@ -1,4 +1,6 @@
+import { Routes, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api/api.service';
 
 @Component({
   selector: 'app-sign-up-page',
@@ -7,9 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpPageComponent implements OnInit {
 
-  constructor() { }
+  accounts: any = [];
+  login: string;
+  password: string;
+
+  constructor(private api: ApiService, private router: Router) { }
 
   ngOnInit() {
+    this.getAccounts();
+  }
+
+  getAccounts() {
+    this.api.getAccounts()
+      .subscribe(data => {
+        this.accounts = data;
+      });
+  }
+
+  loginValidation() {
+    this.accounts.forEach(account => {
+      if (account.login === this.login && account.password === this.password) {
+        console.log('ZALOGOWANO');
+        this.router.navigateByUrl('/home');
+      }
+    });
+
   }
 
 }
