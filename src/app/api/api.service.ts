@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpResponse} from '@angular/common/http';
 
 
-const localUrl = 'http://localhost:8080/subjects/all';
+const localUrl = 'http://localhost:8080/';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,6 @@ export class ApiService {
   }
 
   getSubjets() {
-    return this.http.get(localUrl);
+    return this.http.get(localUrl + 'subjects/all');
   }
 }
