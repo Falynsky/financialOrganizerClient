@@ -9,7 +9,7 @@ import {ApiService} from '../api/api.service';
 })
 export class HomePageComponent implements OnInit {
 
-  subjects: Subject[] = [];
+  subjects: any = [];
 
   constructor(private api: ApiService) {
   }
@@ -21,14 +21,7 @@ export class HomePageComponent implements OnInit {
   getSubjets() {
     this.api.getSubjets()
       .subscribe(data => {
-        for (const d of (data as any)) {
-          this.subjects.push({
-            subjectId: d.subjectId,
-            forename: d.forename,
-            surename: d.surename,
-            email: d.email
-          });
-        }
+        this.subjects = data;
       });
   }
 
