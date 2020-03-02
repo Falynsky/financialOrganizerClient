@@ -13,7 +13,7 @@ export class ApiService {
   constructor(private http: HttpClient) {
   }
 
-  getSmartphone() {
+  getSubjets() {
     return this.http.get(localUrl);
   }
 }

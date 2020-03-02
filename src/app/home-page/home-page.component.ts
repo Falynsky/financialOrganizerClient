@@ -1,5 +1,6 @@
+import { Subject } from './../../subject';
 import {Component, OnInit} from '@angular/core';
-import {ApiService} from './api.service';
+import {ApiService} from '../api/api.service';
 
 @Component({
   selector: 'app-home-page',
@@ -8,27 +9,26 @@ import {ApiService} from './api.service';
 })
 export class HomePageComponent implements OnInit {
 
-  smartphone: any = [];
+  subjects: Subject[] = [];
 
   constructor(private api: ApiService) {
   }
 
   ngOnInit() {
-    this.getSmartphones();
+    this.getSubjets();
   }
 
-  getSmartphones() {
-    this.api.getSmartphone()
+  getSubjets() {
+    this.api.getSubjets()
       .subscribe(data => {
         for (const d of (data as any)) {
-          this.smartphone.push({
+          this.subjects.push({
             subjectId: d.subjectId,
             forename: d.forename,
             surename: d.surename,
             email: d.email
           });
         }
-        console.log(this.smartphone);
       });
   }
 
