@@ -1,1 +1,17 @@
-<p>home-page works!</p>
+<h1>All subjects</h1>
+<table class="table">
+    <tr>
+        <th>#</th>
+        <th>SubjectId</th>
+        <th>Forename</th>
+        <th>Surename</th>
+        <th>Email</th>
+    </tr>
+    <tr *ngFor="let subject of subjects; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{subject.subjectId}}</td>
+        <td>{{subject.forename}}</td>
+        <td>{{subject.surename}}</td>
+        <td>{{subject.email}}</td>
+    </tr>
+</table>
