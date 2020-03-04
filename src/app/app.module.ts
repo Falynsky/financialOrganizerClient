@@ -10,6 +10,8 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomePageComponent
   ],
   imports: [
+    FormsModule,
+    MatTableModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
