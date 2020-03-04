@@ -1,1 +1,35 @@
-<p>loans-list works!</p>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="loanId">
+    <th mat-header-cell *matHeaderCellDef> Loan Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.loanId}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="value">
+    <th mat-header-cell *matHeaderCellDef> Loan value </th>
+    <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="accountsByAccountId">
+    <th mat-header-cell *matHeaderCellDef> Account Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.accountsByAccountId}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="loanTypeId">
+    <th mat-header-cell *matHeaderCellDef> Loan type </th>
+    <td mat-cell *matCellDef="let element"> {{element.loanTypeId}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

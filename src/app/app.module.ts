@@ -28,6 +28,7 @@ import { BankAccountTypesListComponent } from './lists/bank-account-types-list/b
 import { LoansListComponent } from './lists/loans-list/loans-list.component';
 import { LoanTypesListComponent } from './lists/loan-types-list/loan-types-list.component';
 import { AfterLoginNavbarComponent } from './navbars/after-login-navbar/after-login-navbar.component';
+import { LogInPageComponent } from './main-pages/log-in-page/log-in-page.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AfterLoginNavbarComponent } from './navbars/after-login-navbar/after-lo
     BankAccountTypesListComponent,
     LoansListComponent,
     LoanTypesListComponent,
-    AfterLoginNavbarComponent
+    AfterLoginNavbarComponent,
+    LogInPageComponent
   ],
   imports: [
     FormsModule,
