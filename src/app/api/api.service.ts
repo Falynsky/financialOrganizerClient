@@ -1,19 +1,19 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpResponse} from '@angular/common/http';
+import { Subjects } from '../models/subjects';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-
-const localUrl = 'http://localhost:8080/subjects/all';
+const api = 'http://localhost:8080/';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-
   constructor(private http: HttpClient) {
   }
 
-  getSubjets() {
-    return this.http.get(localUrl);
+  getSubjects(): Observable<Subjects[]> {
+    return this.http.get<Subjects[]>(api + 'subjects/all');
   }
 }
