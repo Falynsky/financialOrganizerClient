@@ -1,8 +1,19 @@
 <mat-toolbar color="primary" class="mat-elevation-z3">
-  <mat-icon class="nav-bar-icon">account_balance</mat-icon>
-  <span class="title">Financial Organizer</span>
+  <button  [disableRipple]="true" mat-button class="logo-button" routerLink="/home">
+    <mat-icon class="logo-icon" inline=true>account_balance</mat-icon>
+    <span inline=true class="title">Financial Organizer</span>
+  </button>
   <div class="spacer"></div>
-  <a mat-button routerLink="home">Home</a>
-  <a mat-button routerLink="about">About</a>
-  <a mat-raised-button routerLink="signup">Sign up</a>
+
+
+  <a mat-button routerLink="bank-accounts">Bank accounts</a>
+  <a mat-button routerLink="loans">Loans</a>
+  <button mat-button [matMenuTriggerFor]="transactions">Transactions</button>
+  <mat-menu #transactions="matMenu">
+    <button mat-menu-item routerLink="deposit" routerLinkActive="active" >Deposit</button>
+    <button mat-menu-item routerLink="withdraw" routerLinkActive="active">Withdraw</button>
+    <button mat-menu-item routerLink="deposit" routerLinkActive="active" >Deposit</button>
+    <button mat-menu-item routerLink="pay-the-loan" routerLinkActive="active">Pay the loan</button>
+  </mat-menu>
+  <a mat-raised-button routerLink="log-out">Log out</a>
 </mat-toolbar>

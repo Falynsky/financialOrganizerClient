@@ -2,6 +2,8 @@ import { Subjects } from '../models/subjects';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {BankAccounts} from '../models/bankAccounts';
+import {Loans} from '../models/loans';
 
 const api = 'http://localhost:8080/';
 
@@ -15,5 +17,13 @@ export class ApiService {
 
   getSubjects(): Observable<Subjects[]> {
     return this.http.get<Subjects[]>(api + 'subjects/all');
+  }
+
+  getBankAccounts(): Observable<BankAccounts[]> {
+    return this.http.get<BankAccounts[]>(api + 'bankAccounts/all');
+  }
+
+  getLoans(): Observable<Loans[]> {
+    return this.http.get<Loans[]>(api + 'loans/all');
   }
 }
