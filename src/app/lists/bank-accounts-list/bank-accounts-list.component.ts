@@ -14,7 +14,8 @@ export class BankAccountsListComponent implements OnInit {
     'name',
     'accountBalance',
     'bankAccountTypesByBankAccountTypeId',
-    'accountsByAccountId'
+    'accountsByAccountId',
+    'button'
   ];
 
   dataSource;

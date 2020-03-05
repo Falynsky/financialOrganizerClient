@@ -12,7 +12,7 @@ import {
   _MatMenuDirectivesModule,
   MatMenuModule,
   MatCardModule,
-  MatFormFieldModule
+  MatFormFieldModule, MatSortModule
 } from '@angular/material';
 import { AboutPageComponent } from './main-pages/about-page/about-page.component';
 import { SignUpPageComponent } from './main-pages/sign-up-page/sign-up-page.component';
@@ -60,7 +60,8 @@ import { LogInPageComponent } from './main-pages/log-in-page/log-in-page.compone
     _MatMenuDirectivesModule,
     MatMenuModule,
     MatCardModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
