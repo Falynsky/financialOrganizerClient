@@ -12,7 +12,7 @@ import {
   _MatMenuDirectivesModule,
   MatMenuModule,
   MatCardModule,
-  MatFormFieldModule, MatSortModule
+  MatFormFieldModule, MatSortModule, MatInputModule, MatSnackBarModule
 } from '@angular/material';
 import { AboutPageComponent } from './main-pages/about-page/about-page.component';
 import { SignUpPageComponent } from './main-pages/sign-up-page/sign-up-page.component';
@@ -29,6 +29,8 @@ import { LoansListComponent } from './lists/loans-list/loans-list.component';
 import { LoanTypesListComponent } from './lists/loan-types-list/loan-types-list.component';
 import { AfterLoginNavbarComponent } from './navbars/after-login-navbar/after-login-navbar.component';
 import { LogInPageComponent } from './main-pages/log-in-page/log-in-page.component';
+import { SubjectFormComponent } from './forms/subject-form/subject-form.component';
+import { ErrorComponent } from './error/error/error.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { LogInPageComponent } from './main-pages/log-in-page/log-in-page.compone
     LoansListComponent,
     LoanTypesListComponent,
     AfterLoginNavbarComponent,
-    LogInPageComponent
+    LogInPageComponent,
+    SubjectFormComponent,
+    ErrorComponent
   ],
   imports: [
     FormsModule,
@@ -61,7 +65,9 @@ import { LogInPageComponent } from './main-pages/log-in-page/log-in-page.compone
     MatMenuModule,
     MatCardModule,
     MatFormFieldModule,
-    MatSortModule
+    MatSortModule,
+    MatInputModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

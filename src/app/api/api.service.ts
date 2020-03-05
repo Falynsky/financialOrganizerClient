@@ -19,6 +19,14 @@ export class ApiService {
     return this.http.get<Subjects[]>(api + 'subjects/all');
   }
 
+  getSubject(id: string): Observable<Subjects> {
+    return this.http.get<Subjects>(api + 'subjects/' + id);
+  }
+
+  updateSubject(data: Subjects): Observable<Subjects> {
+    return this.http.post<Subjects>(api + 'subjects/update', data);
+  }
+
   getBankAccounts(): Observable<BankAccounts[]> {
     return this.http.get<BankAccounts[]>(api + 'bankAccounts/all');
   }

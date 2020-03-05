@@ -13,7 +13,8 @@ export class SubjectsListComponent implements OnInit {
     'subjectId',
     'forename',
     'surename',
-    'email'
+    'email',
+    'button'
   ];
 
   dataSource;
@@ -29,7 +30,6 @@ export class SubjectsListComponent implements OnInit {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
-      console.log(data);
     });
   }
 

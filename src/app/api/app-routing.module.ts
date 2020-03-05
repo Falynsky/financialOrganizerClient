@@ -11,8 +11,11 @@ import {BankAccountsListComponent} from '../lists/bank-accounts-list/bank-accoun
 import {AccountsListComponent} from '../lists/accounts-list/accounts-list.component';
 import {AccountTypesListComponent} from '../lists/account-types-list/account-types-list.component';
 import {LogInPageComponent} from '../main-pages/log-in-page/log-in-page.component';
+import {SubjectFormComponent} from '../forms/subject-form/subject-form.component';
+import {ErrorComponent} from '../error/error/error.component';
 
 const routes: Routes = [
+  {path: '', component: HomePageComponent},
   {path: 'home', component: HomePageComponent},
   {path: 'about', component: AboutPageComponent},
   {path: 'sign-up', component: SignUpPageComponent},
@@ -24,6 +27,8 @@ const routes: Routes = [
   {path: 'bank-accounts', component: BankAccountsListComponent},
   {path: 'accounts', component: AccountsListComponent},
   {path: 'account-types', component: AccountTypesListComponent},
+  {path: 'subjects/:id', component: SubjectFormComponent},
+  {path: '**', component: ErrorComponent},
 ];
 
 @NgModule({
