@@ -13,6 +13,12 @@ import {AccountTypesListComponent} from '../lists/account-types-list/account-typ
 import {LogInPageComponent} from '../main-pages/log-in-page/log-in-page.component';
 import {SubjectFormComponent} from '../forms/subject-form/subject-form.component';
 import {ErrorComponent} from '../error/error/error.component';
+import {AccountFormComponent} from '../forms/account-form/account-form.component';
+import {AccountTypeFormComponent} from '../forms/account-type-form/account-type-form.component';
+import {BankAccountFormComponent} from '../forms/bank-account-form/bank-account-form.component';
+import {BankAccountTypeFormComponent} from '../forms/bank-account-type-form/bank-account-type-form.component';
+import {LoanFormComponent} from '../forms/loan-form/loan-form.component';
+import {LoanTypeFormComponent} from '../forms/loan-type-form/loan-type-form.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -20,14 +26,23 @@ const routes: Routes = [
   {path: 'about', component: AboutPageComponent},
   {path: 'sign-up', component: SignUpPageComponent},
   {path: 'log-in', component: LogInPageComponent},
-  {path: 'subjects', component: SubjectsListComponent},
-  {path: 'loans', component: LoansListComponent},
-  {path: 'loan-types', component: LoanTypesListComponent},
+  // lists components
+  {path: 'account-types', component: AccountTypesListComponent},
+  {path: 'accounts', component: AccountsListComponent},
   {path: 'bank-account-types', component: BankAccountTypesListComponent},
   {path: 'bank-accounts', component: BankAccountsListComponent},
-  {path: 'accounts', component: AccountsListComponent},
-  {path: 'account-types', component: AccountTypesListComponent},
+  {path: 'loan-types', component: LoanTypesListComponent},
+  {path: 'loans', component: LoansListComponent},
+  {path: 'subjects', component: SubjectsListComponent},
+  // forms components
+  {path: 'accounts/:id', component: AccountFormComponent},
+  {path: 'account-types/:id', component: AccountTypeFormComponent},
+  {path: 'bank-accounts/:id', component: BankAccountFormComponent},
+  {path: 'bank-account-types/:id', component: BankAccountTypeFormComponent},
+  {path: 'loans/:id', component: LoanFormComponent},
+  {path: 'loan-types/:id', component: LoanTypeFormComponent},
   {path: 'subjects/:id', component: SubjectFormComponent},
+  // not found
   {path: '**', component: ErrorComponent},
 ];
 

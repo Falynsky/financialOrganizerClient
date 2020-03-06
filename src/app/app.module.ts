@@ -31,6 +31,13 @@ import { AfterLoginNavbarComponent } from './navbars/after-login-navbar/after-lo
 import { LogInPageComponent } from './main-pages/log-in-page/log-in-page.component';
 import { SubjectFormComponent } from './forms/subject-form/subject-form.component';
 import { ErrorComponent } from './error/error/error.component';
+import { LoanFormComponent } from './forms/loan-form/loan-form.component';
+import { BankAccountFormComponent } from './forms/bank-account-form/bank-account-form.component';
+import { AccountFormComponent } from './forms/account-form/account-form.component';
+import { LoanTypeFormComponent } from './forms/loan-type-form/loan-type-form.component';
+import { AcountTypeFormComponent } from './forms/acount-type-form/acount-type-form.component';
+import { BankAccountTypeFormComponent } from './forms/bank-account-type-form/bank-account-type-form.component';
+import { AccountTypeFormComponent } from './forms/account-type-form/account-type-form.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +56,14 @@ import { ErrorComponent } from './error/error/error.component';
     AfterLoginNavbarComponent,
     LogInPageComponent,
     SubjectFormComponent,
-    ErrorComponent
+    ErrorComponent,
+    LoanFormComponent,
+    BankAccountFormComponent,
+    AccountFormComponent,
+    LoanTypeFormComponent,
+    AcountTypeFormComponent,
+    BankAccountTypeFormComponent,
+    AccountTypeFormComponent
   ],
   imports: [
     FormsModule,
