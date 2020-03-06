@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {BankAccounts} from '../../models/bankAccountTypes';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {ApiService} from '../../api/api.service';
 import {MatSnackBar} from '@angular/material';
