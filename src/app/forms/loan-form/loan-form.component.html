@@ -1,1 +1,32 @@
-<p>loan-form works!</p>
+<mat-card class="example-card">
+  <div>
+    <mat-form-field class="bankAccountId">
+      <input type="text" matInput placeholder="Loan Id" [(ngModel)]="loan.loanId"
+             [disabled]="true">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="name">
+      <input type="text" matInput placeholder="Name" [(ngModel)]="loan.name">
+    </mat-form-field>
+
+    <mat-form-field class="value">
+      <input type="text" matInput placeholder="Value" [(ngModel)]="loan.value">
+    </mat-form-field>
+
+    <mat-form-field class="account">
+      <input type="text" matInput placeholder="Account id" [(ngModel)]="loan.accountsByAccountId">
+    </mat-form-field>
+
+    <mat-form-field class="loanType">
+      <input type="text" matInput placeholder="Loan type id" [(ngModel)]="loan.loanTypeId">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="onSubmit(loan)">Update</button>
+    <button mat-raised-button color="primary" [routerLink]="['/loans']">Go back</button>
+
+  </div>
+</mat-card>
+
+
+

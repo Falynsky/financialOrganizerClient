@@ -1,1 +1,31 @@
-<p>bank-account-type-form works!</p>
+<mat-card class="example-card">
+  <ng-template [ngIf]="isNew == false">
+    <div>
+      <mat-form-field class="bankAccountId">
+        <input type="text" matInput placeholder="Bank account Id" [(ngModel)]="bankAccountType.bankAccountTypeId"
+               [disabled]="true">
+      </mat-form-field>
+    </div>
+  </ng-template>
+  <div>
+    <mat-form-field class="name">
+      <input type="text" matInput placeholder="Name" [(ngModel)]="bankAccountType.name">
+    </mat-form-field>
+    <div *ngIf="isNew == false;else other_content">
+      <button mat-raised-button color="primary" [routerLink]="['/bank-account-types']">Go back</button>
+      <div class="divider"></div>
+      <button mat-raised-button color="primary" (click)="onSubmit(bankAccountType)">Update</button>
+    </div>
+    <ng-template #other_content>
+      <div>
+        <button mat-raised-button color="primary" [routerLink]="['/bank-account-types']">Go back</button>
+        <div class="divider"></div>
+        <button mat-raised-button color="primary" (click)="add(bankAccountType.name)">Add</button>
+      </div>
+    </ng-template>
+
+  </div>
+</mat-card>
+
+
+

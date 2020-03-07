@@ -12,7 +12,7 @@ import {
   _MatMenuDirectivesModule,
   MatMenuModule,
   MatCardModule,
-  MatFormFieldModule, MatSortModule, MatInputModule, MatSnackBarModule
+  MatFormFieldModule, MatSortModule, MatInputModule, MatSnackBarModule, MatGridListModule, MatPaginatorModule
 } from '@angular/material';
 import {AboutPageComponent} from './main-pages/about-page/about-page.component';
 import {SignUpPageComponent} from './main-pages/sign-up-page/sign-up-page.component';
@@ -79,7 +79,9 @@ import {AccountTypeFormComponent} from './forms/account-type-form/account-type-f
     MatFormFieldModule,
     MatSortModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatGridListModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,7 +20,7 @@ export class ApiService {
   }
 
   getAccountTypes(): Observable<AccountTypes[]> {
-    return this.http.get<AccountTypes[]>(api + 'accountTypes/');
+    return this.http.get<AccountTypes[]>(api + 'accountTypes/all');
   }
 
   getAccountType(id: string): Observable<AccountTypes> {
@@ -32,7 +32,7 @@ export class ApiService {
   }
 
   getAccounts(): Observable<Accounts[]> {
-    return this.http.get<Accounts[]>(api + 'accounts/');
+    return this.http.get<Accounts[]>(api + 'accounts/all');
   }
 
   getAccount(id: string): Observable<Accounts> {
@@ -44,7 +44,7 @@ export class ApiService {
   }
 
   getBankAccountTypes(): Observable<BankAccountTypes[]> {
-    return this.http.get<BankAccountTypes[]>(api + 'loanTypes/');
+    return this.http.get<BankAccountTypes[]>(api + 'bankAccountTypes/all');
   }
 
   getBankAccountType(id: string): Observable<BankAccountTypes> {
@@ -53,6 +53,10 @@ export class ApiService {
 
   updateBankAccountType(data: BankAccountTypes): Observable<BankAccountTypes> {
     return this.http.post<BankAccountTypes>(api + 'bankAccountsTypes/update', data);
+  }
+
+  createBankAccountType(data: BankAccountTypes): Observable<BankAccountTypes> {
+    return this.http.post<BankAccountTypes>(api + 'bankAccountsTypes/new', data);
   }
 
   getBankAccounts(): Observable<BankAccounts[]> {
@@ -68,7 +72,7 @@ export class ApiService {
   }
 
   getLoanTypes(): Observable<LoanTypes[]> {
-    return this.http.get<LoanTypes[]>(api + 'loanTypes');
+    return this.http.get<LoanTypes[]>(api + 'loanTypes/all');
   }
 
   getLoanType(id: string): Observable<LoanTypes> {
