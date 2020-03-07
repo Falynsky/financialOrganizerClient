@@ -37,8 +37,8 @@ export class SubjectFormComponent implements OnInit {
     });
   }
 
-  onSubmit(subject) {
-    this.api.updateSubject(subject).subscribe();
+  onSubmit(obj) {
+    this.api.updateSubject(obj).subscribe();
     this.snackBar.open('Subject updated successful', 'OK', {
       duration: 2000,
     });

@@ -1,1 +1,31 @@
-<p>bank-account-form works!</p>
+<mat-card class="example-card">
+  <div>
+    <mat-form-field class="bankAccountId">
+      <input type="text" matInput placeholder="Account Id" [(ngModel)]="bankAccount.bankAccountId" [disabled]="true">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="name">
+      <input type="text" matInput placeholder="Login" [(ngModel)]="bankAccount.name">
+    </mat-form-field>
+
+    <mat-form-field class="accountBalance">
+      <input type="text" matInput placeholder="Password" [(ngModel)]="bankAccount.accountBalance">
+    </mat-form-field>
+
+    <mat-form-field class="bankAccountTypesByBankAccountTypeId">
+      <input type="text" matInput placeholder="Account Type" [(ngModel)]="bankAccount.bankAccountTypesByBankAccountTypeId">
+    </mat-form-field>
+
+    <mat-form-field class="accountsByAccountId">
+    <input type="text" matInput placeholder="Account Type" [(ngModel)]="bankAccount.accountsByAccountId">
+  </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="onSubmit(bankAccount)">Update</button>
+    <button mat-raised-button color="primary" [routerLink]="['/backAccounts']">Go back</button>
+
+  </div>
+</mat-card>
+
+
+

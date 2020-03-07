@@ -37,8 +37,8 @@ export class LoanTypeFormComponent implements OnInit {
     });
   }
 
-  onSubmit(loanType) {
-    this.api.updateLoanType(loanType).subscribe();
+  onSubmit(obj) {
+    this.api.updateLoanType(obj).subscribe();
     this.snackBar.open('Loan Type updated successful', 'OK', {
       duration: 2000,
     });

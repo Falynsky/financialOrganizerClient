@@ -13,27 +13,26 @@ import {Accounts} from '../../models/accounts';
 })
 export class AccountFormComponent implements OnInit {
 
-
-  accountsObs: Observable<Accounts>;
+  accountObs: Observable<Accounts>;
   account = new Accounts();
 
   constructor(private route: ActivatedRoute, private router: Router, private api: ApiService, private snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
-    this.setAccountsObs();
+    this.setAccountObs();
     this.setAccount();
   }
 
-  private setAccountsObs() {
-    this.accountsObs = this.route.paramMap.pipe(
+  private setAccountObs() {
+    this.accountObs = this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
         this.api.getAccount(params.get('id')))
     );
   }
 
   private setAccount() {
-    this.accountsObs.subscribe(obj => {
+    this.accountObs.subscribe(obj => {
       this.account = obj;
     });
   }
@@ -44,5 +43,4 @@ export class AccountFormComponent implements OnInit {
       duration: 2000,
     });
   }
-
 }
