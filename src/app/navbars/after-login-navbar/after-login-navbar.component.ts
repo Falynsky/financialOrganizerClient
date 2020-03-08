@@ -9,14 +9,14 @@ import {HardcodedAuthenticationService} from '../../service/hardcoded-authentica
 })
 export class AfterLoginNavbarComponent implements OnInit {
 
-  constructor(private router: Router,  private hardcodedAuthenticationService: HardcodedAuthenticationService) {
+  constructor(private router: Router, private hardcodedAuthenticationService: HardcodedAuthenticationService) {
   }
 
   ngOnInit() {
   }
 
   logOut() {
-    sessionStorage.removeItem('authenticatedUser');
+    this.hardcodedAuthenticationService.logOut();
     this.router.navigate(['home']).then(() => window.location.reload());
   }
 }

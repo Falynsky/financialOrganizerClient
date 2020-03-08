@@ -19,6 +19,7 @@ import {BankAccountFormComponent} from '../forms/bank-account-form/bank-account-
 import {BankAccountTypeFormComponent} from '../forms/bank-account-type-form/bank-account-type-form.component';
 import {LoanFormComponent} from '../forms/loan-form/loan-form.component';
 import {LoanTypeFormComponent} from '../forms/loan-type-form/loan-type-form.component';
+import {RouteGuardService} from '../service/route-guard.service';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -27,21 +28,21 @@ const routes: Routes = [
   {path: 'sign-up', component: SignUpPageComponent},
   {path: 'log-in', component: LogInPageComponent},
   // lists components
-  {path: 'account-types', component: AccountTypesListComponent},
-  {path: 'accounts', component: AccountsListComponent},
-  {path: 'bank-account-types', component: BankAccountTypesListComponent},
-  {path: 'bank-accounts', component: BankAccountsListComponent},
-  {path: 'loan-types', component: LoanTypesListComponent},
-  {path: 'loans', component: LoansListComponent},
-  {path: 'subjects', component: SubjectsListComponent},
+  {path: 'account-types', component: AccountTypesListComponent, canActivate: [RouteGuardService]},
+  {path: 'accounts', component: AccountsListComponent, canActivate: [RouteGuardService]},
+  {path: 'bank-account-types', component: BankAccountTypesListComponent, canActivate: [RouteGuardService]},
+  {path: 'bank-accounts', component: BankAccountsListComponent, canActivate: [RouteGuardService]},
+  {path: 'loan-types', component: LoanTypesListComponent, canActivate: [RouteGuardService]},
+  {path: 'loans', component: LoansListComponent, canActivate: [RouteGuardService]},
+  {path: 'subjects', component: SubjectsListComponent, canActivate: [RouteGuardService]},
   // forms components
-  {path: 'accounts/:id', component: AccountFormComponent},
-  {path: 'account-types/:id', component: AccountTypeFormComponent},
-  {path: 'bank-accounts/:id', component: BankAccountFormComponent},
-  {path: 'bank-account-types/:id', component: BankAccountTypeFormComponent},
-  {path: 'loans/:id', component: LoanFormComponent},
-  {path: 'loan-types/:id', component: LoanTypeFormComponent},
-  {path: 'subjects/:id', component: SubjectFormComponent},
+  {path: 'accounts/:id', component: AccountFormComponent, canActivate: [RouteGuardService]},
+  {path: 'account-types/:id', component: AccountTypeFormComponent, canActivate: [RouteGuardService]},
+  {path: 'bank-accounts/:id', component: BankAccountFormComponent, canActivate: [RouteGuardService]},
+  {path: 'bank-account-types/:id', component: BankAccountTypeFormComponent, canActivate: [RouteGuardService]},
+  {path: 'loans/:id', component: LoanFormComponent, canActivate: [RouteGuardService]},
+  {path: 'loan-types/:id', component: LoanTypeFormComponent, canActivate: [RouteGuardService]},
+  {path: 'subjects/:id', component: SubjectFormComponent, canActivate: [RouteGuardService]},
   // not found
   {path: '**', component: ErrorComponent},
 

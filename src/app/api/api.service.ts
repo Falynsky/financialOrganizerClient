@@ -8,7 +8,6 @@ import {LoanTypes} from '../models/loanTypes';
 import {BankAccountTypes} from '../models/bankAccountTypes';
 import {Accounts} from '../models/accounts';
 import {AccountTypes} from '../models/accountTypes';
-import {catchError, retry} from 'rxjs/operators';
 
 const api = 'http://localhost:8080/';
 
