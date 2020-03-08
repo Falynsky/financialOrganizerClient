@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {ApiService} from '../../api/api.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-accounts-list',
@@ -33,4 +34,5 @@ export class AccountsListComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
     });
   }
+
 }

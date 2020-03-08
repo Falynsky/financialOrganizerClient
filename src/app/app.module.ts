@@ -4,7 +4,7 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './api/app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {NavbarComponent} from './navbars/mian-navbar/navbar.component';
+import {NavbarComponent} from './navbars/main-navbar/navbar.component';
 import {
   MatToolbarModule,
   MatButtonModule,
@@ -37,6 +37,7 @@ import {AccountFormComponent} from './forms/account-form/account-form.component'
 import {LoanTypeFormComponent} from './forms/loan-type-form/loan-type-form.component';
 import {BankAccountTypeFormComponent} from './forms/bank-account-type-form/bank-account-type-form.component';
 import {AccountTypeFormComponent} from './forms/account-type-form/account-type-form.component';
+import { MenuComponent } from './main-pages/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import {AccountTypeFormComponent} from './forms/account-type-form/account-type-f
     AccountFormComponent,
     LoanTypeFormComponent,
     BankAccountTypeFormComponent,
-    AccountTypeFormComponent
+    AccountTypeFormComponent,
+    MenuComponent
   ],
   imports: [
     FormsModule,

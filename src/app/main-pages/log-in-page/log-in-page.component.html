@@ -1,3 +1,4 @@
+
 <div class="login_form">
   <mat-card class="example-card">
     <mat-card-header>
@@ -22,6 +23,7 @@
           </tr>
         </table>
       </form>
+      <small *ngIf="invalidLogin == true">{{errorMessage}}</small>
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button (click)="loginValidation()" color="primary">Login</button>

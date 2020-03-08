@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {HardcodedAuthenticationService} from '../../service/hardcoded-authentication.service';
 
 @Component({
   selector: 'app-after-login-navbar',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AfterLoginNavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,  private hardcodedAuthenticationService: HardcodedAuthenticationService) {
+  }
 
   ngOnInit() {
   }
 
+  logOut() {
+    sessionStorage.removeItem('authenticatedUser');
+    this.router.navigate(['home']).then(() => window.location.reload());
+  }
 }

@@ -1,13 +1,14 @@
 import {Subjects} from '../models/subjects';
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, throwError} from 'rxjs';
 import {BankAccounts} from '../models/bankAccounts';
 import {Loans} from '../models/loans';
 import {LoanTypes} from '../models/loanTypes';
 import {BankAccountTypes} from '../models/bankAccountTypes';
 import {Accounts} from '../models/accounts';
 import {AccountTypes} from '../models/accountTypes';
+import {catchError, retry} from 'rxjs/operators';
 
 const api = 'http://localhost:8080/';
 
@@ -28,7 +29,7 @@ export class ApiService {
   }
 
   updateAccountType(data: AccountTypes): Observable<AccountTypes> {
-    return this.http.post<AccountTypes>(api + 'accountTypes/', data);
+    return this.http.post<AccountTypes>(api + 'accountTypes/update', data);
   }
 
   getAccounts(): Observable<Accounts[]> {
@@ -52,12 +53,23 @@ export class ApiService {
   }
 
   updateBankAccountType(data: BankAccountTypes): Observable<BankAccountTypes> {
-    return this.http.post<BankAccountTypes>(api + 'bankAccountsTypes/update', data);
+    return this.http.post<BankAccountTypes>(api + 'bankAccountTypes/update', data)/*.pipe(retry(1), catchError(this.handleError))*/;
   }
 
-  createBankAccountType(data: BankAccountTypes): Observable<BankAccountTypes> {
-    return this.http.post<BankAccountTypes>(api + 'bankAccountsTypes/new', data);
+/*
+  handleError(error) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      // client-side error
+      errorMessage = `Error: ${error.error.message}`;
+    } else {
+      // server-side error
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    window.alert(errorMessage);
+    return throwError(errorMessage);
   }
+*/
 
   getBankAccounts(): Observable<BankAccounts[]> {
     return this.http.get<BankAccounts[]>(api + 'bankAccounts/all');

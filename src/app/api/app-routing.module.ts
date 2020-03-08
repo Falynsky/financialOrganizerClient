@@ -44,7 +44,7 @@ const routes: Routes = [
   {path: 'subjects/:id', component: SubjectFormComponent},
   // not found
   {path: '**', component: ErrorComponent},
-  {path: 'bank-account-types/new', component: BankAccountTypeFormComponent},
+
 ];
 
 @NgModule({

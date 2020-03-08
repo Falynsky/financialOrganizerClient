@@ -43,4 +43,5 @@ export class AccountFormComponent implements OnInit {
       duration: 2000,
     });
   }
+
 }

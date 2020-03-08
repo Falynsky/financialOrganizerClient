@@ -1,9 +1,11 @@
 <mat-card class="example-card">
-  <div>
-    <mat-form-field class="subjectId">
-      <input type="text" matInput placeholder="Subject Id" [(ngModel)]="subject.subjectId" [disabled]="true">
-    </mat-form-field>
-  </div>
+  <ng-template [ngIf]="isNew == false">
+    <div>
+      <mat-form-field class="subjectId">
+        <input type="text" matInput placeholder="Subject Id" [(ngModel)]="subject.subjectId" [disabled]="true">
+      </mat-form-field>
+    </div>
+  </ng-template>
   <div>
     <mat-form-field class="forename">
       <input type="text" matInput placeholder="Forename" [(ngModel)]="subject.forename">
@@ -17,8 +19,18 @@
       <input type="text" matInput placeholder="Email" [(ngModel)]="subject.email">
     </mat-form-field>
 
-    <button mat-raised-button color="primary" (click)="onSubmit(subject)">Update</button>
-    <button mat-raised-button color="primary" [routerLink]="['/subjects']">Go back</button>
+    <div *ngIf="isNew == false;else other_content">
+      <button mat-raised-button color="primary" [routerLink]="['/subjects']">Go back</button>
+      <div class="divider"></div>
+      <button mat-raised-button color="primary" (click)="onSubmit(subject)">Update</button>
+    </div>
+    <ng-template #other_content>
+      <div>
+        <button mat-raised-button color="primary" [routerLink]="['/subjects']">Go back</button>
+        <div class="divider"></div>
+        <button mat-raised-button color="primary" (click)="add(subject)">Add</button>
+      </div>
+    </ng-template>
 
   </div>
 </mat-card>

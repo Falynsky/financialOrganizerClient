@@ -39,9 +39,6 @@ export class BankAccountFormComponent implements OnInit {
 
   onSubmit(obj) {
     this.api.updateBankAccount(obj).subscribe();
-    this.snackBar.open('Bank Account updated successful', 'OK', {
-      duration: 2000,
-    });
   }
 
 }

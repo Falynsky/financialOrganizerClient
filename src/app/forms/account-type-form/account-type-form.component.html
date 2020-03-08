@@ -11,7 +11,7 @@
     </mat-form-field>
 
     <mat-form-field class="permissionLevel">
-      <input type="text" matInput placeholder="Permission level" [(ngModel)]="accountType.permissionLevel">
+      <input type="number" matInput placeholder="Permission level" [(ngModel)]="accountType.permissionLevel">
     </mat-form-field>
 
     <button mat-raised-button color="primary" (click)="onSubmit(accountType)">Update</button>

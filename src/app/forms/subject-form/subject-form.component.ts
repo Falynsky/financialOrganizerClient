@@ -15,13 +15,19 @@ export class SubjectFormComponent implements OnInit {
 
   subjectObs: Observable<Subjects>;
   subject = new Subjects();
+  isNew = false;
 
   constructor(private route: ActivatedRoute, private router: Router, private api: ApiService, private snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
-    this.setSubjectObs();
-    this.setCountry();
+    if (this.router.url !== '/subjects/new') {
+      this.setSubjectObs();
+      this.setCountry();
+    } else {
+      this.isNew = true;
+    }
+
   }
 
   private setSubjectObs() {
@@ -42,5 +48,9 @@ export class SubjectFormComponent implements OnInit {
     this.snackBar.open('Subject updated successful', 'OK', {
       duration: 2000,
     });
+  }
+
+  add(obj) {
+
   }
 }

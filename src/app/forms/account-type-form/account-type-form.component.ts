@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {ApiService} from '../../api/api.service';
