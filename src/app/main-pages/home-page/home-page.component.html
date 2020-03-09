@@ -1,1 +1,41 @@
-<h1>Home page works</h1>
+<div class="wrapper">
+  <div class="first">
+    <h1>Welcome at Financial organizer app</h1>
+  </div>
+  <div class="second">
+    <h1>Time to save some money</h1>
+  </div>
+</div>
+
+
+<div class="third">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Financial management data
+        </mat-panel-title>
+        <mat-panel-description>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div class="PieChart">
+        <canvas id="pieChart"></canvas>
+      </div>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+  <!--  <mat-grid-list cols="3" rowHeight="100px">
+      <mat-grid-tile
+        *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        [style.background]="tile.color">
+        {{tile.text}}
+      </mat-grid-tile>
+    </mat-grid-list>-->
+
+
+</div>
