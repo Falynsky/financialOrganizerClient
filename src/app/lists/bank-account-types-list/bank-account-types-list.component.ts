@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {ApiService} from '../../api/api.service';
+import {BankAccountTypeFormComponent} from '../../forms/bank-account-type-form/bank-account-type-form.component';
 
 @Component({
   selector: 'app-bank-account-types-list',

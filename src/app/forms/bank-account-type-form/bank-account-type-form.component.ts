@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable, throwError} from 'rxjs';
+import {Observable} from 'rxjs';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {ApiService} from '../../api/api.service';
 import {MatSnackBar} from '@angular/material';
-import {catchError, switchMap} from 'rxjs/operators';
+import {switchMap} from 'rxjs/operators';
 import {BankAccountTypes} from '../../models/bankAccountTypes';
 
 @Component({
@@ -15,6 +15,7 @@ export class BankAccountTypeFormComponent implements OnInit {
 
   bankAccountTypeObs: Observable<BankAccountTypes>;
   bankAccountType = new BankAccountTypes();
+  isNew = false;
 
   constructor(private route: ActivatedRoute, private router: Router, private api: ApiService, private snackBar: MatSnackBar) {
   }
@@ -38,11 +39,6 @@ export class BankAccountTypeFormComponent implements OnInit {
   }
 
   onSubmit(obj) {
-
-   this.api.updateBankAccountType(obj).subscribe();
-
-
+    this.api.updateBankAccountType(obj).subscribe();
   }
-
-
 }

@@ -14,16 +14,8 @@ export interface Tile {
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-  tiles: Tile[] = [
-    {text: 'One', cols: 3, rows: 3, color: 'lightblue'},
-    {text: 'Two', cols: 2, rows: 2, color: 'lightgreen'},
-    {text: 'Four', cols: 1, rows: 2, color: '#DDBDF1'},
-  ];
-  LineChart = [];
-  BarChart = [];
-  PieChart = [];
-  panelOpenState = false;
 
+  PieChart = [];
 
   constructor() {
   }
@@ -60,7 +52,7 @@ export class HomePageComponent implements OnInit {
       },
       options: {
         title: {
-          text: 'Ways of financial organization using by people',
+          text: 'Ways of organizing finances used by people',
           display: true
         }
       }

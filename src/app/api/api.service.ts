@@ -1,6 +1,6 @@
 import {Subjects} from '../models/subjects';
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {BankAccounts} from '../models/bankAccounts';
 import {Loans} from '../models/loans';
@@ -63,7 +63,6 @@ export class ApiService {
     return this.http.get<BankAccounts[]>(api + 'bankAccounts/my?login=' + userLogin);
   }
 
-
   getBankAccount(id: string): Observable<BankAccounts> {
     return this.http.get<BankAccounts>(api + 'bankAccounts/' + id);
   }
@@ -107,5 +106,4 @@ export class ApiService {
   updateSubject(data: Subjects): Observable<Subjects> {
     return this.http.post<Subjects>(api + 'subjects/update', data);
   }
-
 }

@@ -1,3 +1,41 @@
-.third {
-  text-align: center;
+.top-section{
+
+  width: 100% !important;
+  min-width: 100%;
+  padding: 0;
+  margin: 0;
+
+
+  .about-program-section {
+    text-align: center;
+    margin-right: 10%;
+    margin-left: 10%;
+    font-family: "Lato", sans-serif;
+
+    .wide{
+      font-size: 35px;
+    }
+    .opacity{
+      color: deeppink;
+      padding-bottom: 15px;
+    }
+    .image-div {
+      display: inline-block;
+      margin-right: 10px;
+      margin-left: 10px;
+      margin-bottom: 15px;
+    }
+
+    .image {
+      width: 250px;
+      object-fit: cover;
+    }
+    .justify{
+      text-align: justify;
+      text-justify: inter-word;
+    }
+  }
+
+
 }
+
