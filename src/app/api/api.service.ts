@@ -1,7 +1,7 @@
 import {Subjects} from '../models/subjects';
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {Observable} from 'rxjs';
 import {BankAccounts} from '../models/bankAccounts';
 import {Loans} from '../models/loans';
 import {LoanTypes} from '../models/loanTypes';
@@ -55,24 +55,14 @@ export class ApiService {
     return this.http.post<BankAccountTypes>(api + 'bankAccountTypes/update', data)/*.pipe(retry(1), catchError(this.handleError))*/;
   }
 
-/*
-  handleError(error) {
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      // client-side error
-      errorMessage = `Error: ${error.error.message}`;
-    } else {
-      // server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    window.alert(errorMessage);
-    return throwError(errorMessage);
-  }
-*/
-
   getBankAccounts(): Observable<BankAccounts[]> {
     return this.http.get<BankAccounts[]>(api + 'bankAccounts/all');
   }
+
+  getMyBankAccounts(userLogin: string): Observable<BankAccounts[]> {
+    return this.http.get<BankAccounts[]>(api + 'bankAccounts/my?login=' + userLogin);
+  }
+
 
   getBankAccount(id: string): Observable<BankAccounts> {
     return this.http.get<BankAccounts>(api + 'bankAccounts/' + id);

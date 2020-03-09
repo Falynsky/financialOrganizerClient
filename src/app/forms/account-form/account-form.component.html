@@ -1,7 +1,7 @@
 <mat-card class="example-card">
     <div>
       <mat-form-field class="accountId">
-        <input type="text" matInput placeholder="Account Id" [(ngModel)]="account.accountId" [disabled]="true">
+        <input type="number" matInput placeholder="Account Id" [(ngModel)]="account.accountId" [disabled]="true">
       </mat-form-field>
     </div>
   <div>
@@ -14,11 +14,16 @@
     </mat-form-field>
 
     <mat-form-field class="accountTypesByAccountTypeId">
-      <input type="text" matInput placeholder="Account Type" [(ngModel)]="account.accountTypesByAccountTypeId">
+      <input type="number" matInput placeholder="Account Type" [(ngModel)]="account.accountTypesByAccountTypeId">
+    </mat-form-field>
+
+    <mat-form-field class="subjectId">
+      <input type="number" matInput placeholder="SubjectId" [(ngModel)]="account.subjectId">
     </mat-form-field>
 
 
-      <button mat-raised-button color="primary" [routerLink]="['/accounts']">Go back</button>
+
+    <button mat-raised-button color="primary" [routerLink]="['/accounts']">Go back</button>
       <div class="divider"></div>
       <button mat-raised-button color="primary" (click)="onSubmit(account)">Update</button>
 

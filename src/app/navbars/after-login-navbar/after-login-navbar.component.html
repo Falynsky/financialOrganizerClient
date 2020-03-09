@@ -6,14 +6,14 @@
   <div class="spacer"></div>
 
 
-  <a mat-button routerLink="bank-accounts">Bank accounts</a>
-  <a mat-button routerLink="loans">Loans</a>
+  <a mat-button routerLink="bank-accounts/my">Bank accounts</a>
+  <a mat-button routerLink="loans/my">Loans</a>
 
   <button mat-button [matMenuTriggerFor]="transactions">Transactions</button>
   <mat-menu #transactions="matMenu">
     <button mat-menu-item routerLink="deposit" routerLinkActive="active" >Deposit</button>
     <button mat-menu-item routerLink="withdraw" routerLinkActive="active">Withdraw</button>
-    <button mat-menu-item routerLink="deposit" routerLinkActive="active" >Deposit</button>
+    <button mat-menu-item routerLink="transfer" routerLinkActive="active" >Transfer</button>
     <button mat-menu-item routerLink="pay-the-loan" routerLinkActive="active">Pay the loan</button>
   </mat-menu>
 

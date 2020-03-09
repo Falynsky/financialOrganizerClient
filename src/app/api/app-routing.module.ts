@@ -20,6 +20,12 @@ import {BankAccountTypeFormComponent} from '../forms/bank-account-type-form/bank
 import {LoanFormComponent} from '../forms/loan-form/loan-form.component';
 import {LoanTypeFormComponent} from '../forms/loan-type-form/loan-type-form.component';
 import {RouteGuardService} from '../service/route-guard.service';
+import {MyBankAccountsListComponent} from '../lists/my-bank-accounts-list/my-bank-accounts-list.component';
+import {MyLoansListComponent} from '../lists/my-loans-list/my-loans-list.component';
+import {DepositComponent} from '../transactions/deposit/deposit.component';
+import {WithdrawComponent} from '../transactions/withdraw/withdraw.component';
+import {TransferComponent} from '../transactions/transfer/transfer.component';
+import {PayTheLoanComponent} from '../transactions/pay-the-loan/pay-the-loan.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -35,6 +41,14 @@ const routes: Routes = [
   {path: 'loan-types', component: LoanTypesListComponent, canActivate: [RouteGuardService]},
   {path: 'loans', component: LoansListComponent, canActivate: [RouteGuardService]},
   {path: 'subjects', component: SubjectsListComponent, canActivate: [RouteGuardService]},
+  // mine lists components
+  {path: 'bank-accounts/my', component: MyBankAccountsListComponent, canActivate: [RouteGuardService]},
+  {path: 'loans/my', component: MyLoansListComponent, canActivate: [RouteGuardService]},
+  // transactions
+  {path: 'deposit', component: DepositComponent, canActivate: [RouteGuardService]},
+  {path: 'withdraw', component: WithdrawComponent, canActivate: [RouteGuardService]},
+  {path: 'transfer', component: TransferComponent, canActivate: [RouteGuardService]},
+  {path: 'pay-the-loan', component: PayTheLoanComponent, canActivate: [RouteGuardService]},
   // forms components
   {path: 'accounts/:id', component: AccountFormComponent, canActivate: [RouteGuardService]},
   {path: 'account-types/:id', component: AccountTypeFormComponent, canActivate: [RouteGuardService]},
@@ -45,7 +59,6 @@ const routes: Routes = [
   {path: 'subjects/:id', component: SubjectFormComponent, canActivate: [RouteGuardService]},
   // not found
   {path: '**', component: ErrorComponent},
-
 ];
 
 @NgModule({

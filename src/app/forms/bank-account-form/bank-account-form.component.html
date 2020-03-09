@@ -1,7 +1,7 @@
 <mat-card class="example-card">
   <div>
     <mat-form-field class="bankAccountId">
-      <input type="text" matInput placeholder="Account Id" [(ngModel)]="bankAccount.bankAccountId" [disabled]="true">
+      <input type="number" matInput placeholder="Account Id" [(ngModel)]="bankAccount.bankAccountId" [disabled]="true">
     </mat-form-field>
   </div>
   <div>
@@ -14,12 +14,12 @@
     </mat-form-field>
 
     <mat-form-field class="Bank account type id">
-      <input type="text" matInput placeholder="Account Type"
+      <input type="number" matInput placeholder="Account Type"
              [(ngModel)]="bankAccount.bankAccountTypesByBankAccountTypeId">
     </mat-form-field>
 
     <mat-form-field class="Account">
-      <input type="text" matInput placeholder="Account Type" [(ngModel)]="bankAccount.accountsByAccountId">
+      <input type="number" matInput placeholder="Account Type" [(ngModel)]="bankAccount.accountsByAccountId">
     </mat-form-field>
 
     <button mat-raised-button color="primary" (click)="onSubmit(bankAccount)">Update</button>

@@ -13,7 +13,7 @@ export class LogInPageComponent implements OnInit {
   password: string;
   private invalidLogin: boolean;
   errorMessage = 'Wrong credentials!';
-
+  hide = true;
   constructor(private router: Router, private hardcodedAuthenticationService: HardcodedAuthenticationService) {
   }
 

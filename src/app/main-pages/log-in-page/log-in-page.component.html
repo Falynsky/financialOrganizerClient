@@ -11,13 +11,18 @@
             <td>
               <mat-form-field class="example-full-width">
                 <input matInput placeholder="Username"  [(ngModel)]="login" name="username" required>
+                <span matPrefix></span>
+                <span matSuffix>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
               </mat-form-field>
             </td>
           </tr>
           <tr>
             <td>
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
+                <input matInput placeholder="Password" [(ngModel)]="password" [type]="hide ? 'password' : 'text'" name="password" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
               </mat-form-field>
             </td>
           </tr>

@@ -38,6 +38,12 @@ import {LoanTypeFormComponent} from './forms/loan-type-form/loan-type-form.compo
 import {BankAccountTypeFormComponent} from './forms/bank-account-type-form/bank-account-type-form.component';
 import {AccountTypeFormComponent} from './forms/account-type-form/account-type-form.component';
 import { MenuComponent } from './main-pages/menu/menu.component';
+import {MyBankAccountsListComponent} from './lists/my-bank-accounts-list/my-bank-accounts-list.component';
+import { MyLoansListComponent } from './lists/my-loans-list/my-loans-list.component';
+import { DepositComponent } from './transactions/deposit/deposit.component';
+import { WithdrawComponent } from './transactions/withdraw/withdraw.component';
+import { PayTheLoanComponent } from './transactions/pay-the-loan/pay-the-loan.component';
+import { TransferComponent } from './transactions/transfer/transfer.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +69,13 @@ import { MenuComponent } from './main-pages/menu/menu.component';
     LoanTypeFormComponent,
     BankAccountTypeFormComponent,
     AccountTypeFormComponent,
-    MenuComponent
+    MenuComponent,
+    MyBankAccountsListComponent,
+    MyLoansListComponent,
+    DepositComponent,
+    WithdrawComponent,
+    PayTheLoanComponent,
+    TransferComponent
   ],
   imports: [
     FormsModule,
