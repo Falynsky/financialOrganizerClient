@@ -1,8 +1,8 @@
 export class Accounts {
 
-  accountId: string;
+  accountId: number;
   login: string;
   password: string;
-  accountTypesByAccountTypeId: string;
-  subjectId: string;
+  accountTypesByAccountTypeId: number;
+  subjectId: number;
 }

@@ -1,0 +1,20 @@
+<mat-card class="example-card">
+  <div>
+    <mat-form-field class="bankAccountId">
+      <input type="number" matInput placeholder="Bank account Id" [(ngModel)]="loanType.loanTypeId"
+             [disabled]="true">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="name">
+      <input type="text" matInput placeholder="Name" [(ngModel)]="loanType.name">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="onSubmit(loanType)">Update</button>
+    <button mat-raised-button color="primary" [routerLink]="['/loan-types']">Go back</button>
+
+  </div>
+</mat-card>
+
+
+

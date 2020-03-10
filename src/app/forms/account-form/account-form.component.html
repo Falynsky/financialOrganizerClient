@@ -1,0 +1,31 @@
+<mat-card class="example-card">
+    <div>
+      <mat-form-field class="accountId">
+        <input type="number" matInput placeholder="Account Id" [(ngModel)]="account.accountId" [disabled]="true">
+      </mat-form-field>
+    </div>
+  <div>
+    <mat-form-field class="login">
+      <input type="text" matInput placeholder="Login" [(ngModel)]="account.login">
+    </mat-form-field>
+
+    <mat-form-field class="password">
+      <input type="text" matInput placeholder="Password" [(ngModel)]="account.password">
+    </mat-form-field>
+
+    <mat-form-field class="accountTypesByAccountTypeId">
+      <input type="number" matInput placeholder="Account Type" [(ngModel)]="account.accountTypesByAccountTypeId">
+    </mat-form-field>
+
+    <mat-form-field class="subjectId">
+      <input type="number" matInput placeholder="SubjectId" [(ngModel)]="account.subjectId">
+    </mat-form-field>
+
+
+
+    <button mat-raised-button color="primary" [routerLink]="['/accounts']">Go back</button>
+      <div class="divider"></div>
+      <button mat-raised-button color="primary" (click)="onSubmit(account)">Update</button>
+
+  </div>
+</mat-card>

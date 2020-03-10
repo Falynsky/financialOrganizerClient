@@ -1,0 +1,21 @@
+<mat-card class="example-card">
+  <div>
+    <mat-form-field class="accountTypeId">
+      <input type="number" matInput placeholder="Account Type Id" [(ngModel)]="accountType.accountTypeId"
+             [disabled]="true">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="name">
+      <input type="text" matInput placeholder="Name" [(ngModel)]="accountType.name">
+    </mat-form-field>
+
+    <mat-form-field class="permissionLevel">
+      <input type="number" matInput placeholder="Permission level" [(ngModel)]="accountType.permissionLevel">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="onSubmit(accountType)">Update</button>
+    <button mat-raised-button color="primary" [routerLink]="['/account-types']">Go back</button>
+
+  </div>
+</mat-card>

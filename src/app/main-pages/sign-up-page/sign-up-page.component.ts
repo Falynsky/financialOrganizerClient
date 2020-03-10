@@ -1,5 +1,4 @@
-import { Router } from '@angular/router';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -9,10 +8,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class SignUpPageComponent implements OnInit {
 
-  login: string;
-  password: string;
-
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
   }

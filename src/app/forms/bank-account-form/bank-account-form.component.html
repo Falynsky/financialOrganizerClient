@@ -1,0 +1,32 @@
+<mat-card class="example-card">
+  <div>
+    <mat-form-field class="bankAccountId">
+      <input type="number" matInput placeholder="Account Id" [(ngModel)]="bankAccount.bankAccountId" [disabled]="true">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="name">
+      <input type="text" matInput placeholder="Name" [(ngModel)]="bankAccount.name">
+    </mat-form-field>
+
+    <mat-form-field class="accountBalance">
+      <input type="text" matInput placeholder="Balance" [(ngModel)]="bankAccount.accountBalance">
+    </mat-form-field>
+
+    <mat-form-field class="Bank account type id">
+      <input type="number" matInput placeholder="Account Type"
+             [(ngModel)]="bankAccount.bankAccountTypesByBankAccountTypeId">
+    </mat-form-field>
+
+    <mat-form-field class="Account">
+      <input type="number" matInput placeholder="Account Type" [(ngModel)]="bankAccount.accountsByAccountId">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="onSubmit(bankAccount)">Update</button>
+    <button mat-raised-button color="primary" [routerLink]="['/bank-accounts']">Go back</button>
+
+  </div>
+</mat-card>
+
+
+

@@ -1,4 +1,4 @@
 export class LoanTypes {
-  loanTypeId: string;
+  loanTypeId: number;
   name: string;
 }
