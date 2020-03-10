@@ -1,0 +1,39 @@
+<mat-card class="example-card">
+  <ng-template [ngIf]="isNew == false">
+    <div>
+      <mat-form-field class="subjectId">
+        <input type="number" matInput placeholder="Subject Id" [(ngModel)]="subject.subjectId" [disabled]="true">
+      </mat-form-field>
+    </div>
+  </ng-template>
+  <div>
+    <mat-form-field class="forename">
+      <input type="text" matInput placeholder="Forename" [(ngModel)]="subject.forename">
+    </mat-form-field>
+
+    <mat-form-field class="surename">
+      <input type="text" matInput placeholder="Surename" [(ngModel)]="subject.surename">
+    </mat-form-field>
+
+    <mat-form-field class="email">
+      <input type="text" matInput placeholder="Email" [(ngModel)]="subject.email">
+    </mat-form-field>
+
+    <div *ngIf="isNew == false;else other_content">
+      <button mat-raised-button color="primary" [routerLink]="['/subjects']">Go back</button>
+      <div class="divider"></div>
+      <button mat-raised-button color="primary" (click)="onSubmit(subject)">Update</button>
+    </div>
+    <ng-template #other_content>
+      <div>
+        <button mat-raised-button color="primary" [routerLink]="['/subjects']">Go back</button>
+        <div class="divider"></div>
+        <button mat-raised-button color="primary" (click)="add(subject)">Add</button>
+      </div>
+    </ng-template>
+
+  </div>
+</mat-card>
+
+
+
