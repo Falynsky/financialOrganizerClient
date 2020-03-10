@@ -6,14 +6,27 @@
   <div class="spacer"></div>
 
 
-  <a mat-button routerLink="bank-accounts">Bank accounts</a>
-  <a mat-button routerLink="loans">Loans</a>
+  <a mat-button routerLink="bank-accounts/my">Bank accounts</a>
+  <a mat-button routerLink="loans/my">Loans</a>
+
   <button mat-button [matMenuTriggerFor]="transactions">Transactions</button>
   <mat-menu #transactions="matMenu">
     <button mat-menu-item routerLink="deposit" routerLinkActive="active" >Deposit</button>
     <button mat-menu-item routerLink="withdraw" routerLinkActive="active">Withdraw</button>
-    <button mat-menu-item routerLink="deposit" routerLinkActive="active" >Deposit</button>
+    <button mat-menu-item routerLink="transfer" routerLinkActive="active" >Transfer</button>
     <button mat-menu-item routerLink="pay-the-loan" routerLinkActive="active">Pay the loan</button>
   </mat-menu>
-  <a mat-raised-button routerLink="log-out">Log out</a>
+
+  <button mat-button [matMenuTriggerFor]="adminPanel">Admin panel</button>
+  <mat-menu #adminPanel="matMenu">
+    <button mat-menu-item routerLink="account-types" routerLinkActive="active" >Account types management</button>
+    <button mat-menu-item routerLink="accounts" routerLinkActive="active">Accounts management</button>
+    <button mat-menu-item routerLink="bank-account-types" routerLinkActive="active" >Bank account types management</button>
+    <button mat-menu-item routerLink="bank-accounts" routerLinkActive="active">Bank accounts management</button>
+    <button mat-menu-item routerLink="loan-types" routerLinkActive="active" >Loan types management</button>
+    <button mat-menu-item routerLink="loans" routerLinkActive="active">Loans management</button>
+    <button mat-menu-item routerLink="subjects" routerLinkActive="active" >Subjects management</button>
+  </mat-menu>
+
+  <a mat-raised-button (click)="logOut()" >Log out</a>
 </mat-toolbar>

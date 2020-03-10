@@ -1,1 +1,40 @@
-<p>account-types-list works!</p>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Accounts types</mat-card-title>
+  </mat-card-header>
+
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+    <ng-container matColumnDef="accountTypeId">
+      <th mat-header-cell *matHeaderCellDef> Account type id</th>
+      <td mat-cell *matCellDef="let element"> {{element.accountTypeId}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="permissionLevel">
+      <th mat-header-cell *matHeaderCellDef> Permission level</th>
+      <td mat-cell *matCellDef="let element"> {{element.permissionLevel}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="button">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Edit</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button matSuffix mat-stroked-button aria-label="search"
+                [routerLink]="['/account-types', element.accountTypeId]">
+          <mat-icon>edit</mat-icon>
+        </button>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [length]="100"
+                 [pageSize]="5"
+                 [pageSizeOptions]="[3, 5, 10, 25, 100]">
+
+  </mat-paginator>
+</mat-card>

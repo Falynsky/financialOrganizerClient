@@ -1,9 +1,9 @@
 export class BankAccounts {
 
-  bankAccountId: string;
+  bankAccountId: number;
   name: string;
   accountBalance: string;
-  bankAccountTypesByBankAccountTypeId: string;
-  accountsByAccountId: string;
+  bankAccountTypesByBankAccountTypeId: number;
+  accountsByAccountId: number;
 
 }

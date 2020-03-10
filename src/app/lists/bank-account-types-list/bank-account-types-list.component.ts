@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import {ApiService} from '../../api/api.service';
+import {BankAccountTypeFormComponent} from '../../forms/bank-account-type-form/bank-account-type-form.component';
 
 @Component({
   selector: 'app-bank-account-types-list',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BankAccountTypesListComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = [
+    'bankAccountTypeId',
+    'name',
+    'button'
+  ];
 
-  ngOnInit() {
+  dataSource;
+
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+
+  constructor(private api: ApiService) {
   }
 
+  ngOnInit() {
+    this.api.getBankAccountTypes().subscribe(data => {
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+    });
+  }
 }

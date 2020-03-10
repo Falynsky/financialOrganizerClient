@@ -13,7 +13,8 @@ export class LoansListComponent implements OnInit {
     'name',
     'value',
     'accountsByAccountId',
-    'loanTypeId'
+    'loanTypeId',
+    'button'
   ];
 
   dataSource;

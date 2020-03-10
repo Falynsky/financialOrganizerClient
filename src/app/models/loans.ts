@@ -1,7 +1,7 @@
 export class Loans {
-  loanId: string;
+  loanId: number;
   name: string;
   value: string;
-  accountsByAccountId: string;
-  loanTypeId: string;
+  accountsByAccountId: number;
+  loanTypeId: number;
 }

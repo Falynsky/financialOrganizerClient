@@ -1,5 +1,5 @@
 export class AccountTypes {
-  accountTypeId: string;
+  accountTypeId: number;
   name: string;
-  permissionLevel: string;
+  permissionLevel: number;
 }

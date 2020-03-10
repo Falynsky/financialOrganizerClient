@@ -1,4 +1,4 @@
 export class BankAccountTypes {
-  bankAccountTypeId: string;
+  bankAccountTypeId: number;
   name: string;
 }

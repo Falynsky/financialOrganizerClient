@@ -30,7 +30,6 @@ export class BankAccountsListComponent implements OnInit {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
-      console.log(data);
     });
   }
 }
