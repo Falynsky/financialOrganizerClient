@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Directive, ElementRef, OnInit, Renderer} from '@angular/core';
+
+
+
+
 
 @Component({
   selector: 'app-withdraw',
@@ -7,7 +11,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WithdrawComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

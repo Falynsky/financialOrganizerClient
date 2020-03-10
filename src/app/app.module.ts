@@ -51,6 +51,7 @@ import { DepositComponent } from './transactions/deposit/deposit.component';
 import { WithdrawComponent } from './transactions/withdraw/withdraw.component';
 import { PayTheLoanComponent } from './transactions/pay-the-loan/pay-the-loan.component';
 import { TransferComponent } from './transactions/transfer/transfer.component';
+import { BackGroundColorDirective } from './transactions/back-ground-color.directive';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { TransferComponent } from './transactions/transfer/transfer.component';
     DepositComponent,
     WithdrawComponent,
     PayTheLoanComponent,
-    TransferComponent
+    TransferComponent,
+    BackGroundColorDirective
   ],
   imports: [
     FormsModule,
